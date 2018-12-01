@@ -44,6 +44,39 @@ public class ExtendedAdvancedSortingTest extends AdvancedSortingTest {
         Assert.assertEquals(true, sorted);
     }
 
+    @Test
+    public void testCompareToOfPlayerHighscore(){
+        Player playerOne = new Player("Johan","Derksen",900);
+        Player playerTwo = new Player("Wilfred","Genee",1000);
 
+        int compareValue = playerOne.compareTo(playerTwo);
+        Assert.assertEquals(true, compareValue < 0);
 
+        int secondCompareValue = playerTwo.compareTo(playerOne);
+        Assert.assertEquals(true, secondCompareValue > 0);
+    }
+
+    @Test
+    public void testCompareToOfPlayerLastname(){
+        Player playerOne = new Player("Johan","Derksen",0);
+        Player playerTwo = new Player("Wilfred","Genee",0);
+
+        int compareValue = playerOne.compareTo(playerTwo);
+        Assert.assertEquals(true, compareValue < 0);
+
+        int secondCompareValue = playerTwo.compareTo(playerOne);
+        Assert.assertEquals(true, secondCompareValue > 0);
+    }
+
+    @Test
+    public void testCompareToOfPlayerFirstname(){
+        Player playerOne = new Player("Johan","Derksen",0);
+        Player playerTwo = new Player("Wilfred","Derksen",0);
+
+        int compareValue = playerOne.compareTo(playerTwo);
+        Assert.assertEquals(true, compareValue < 0);
+
+        int secondCompareValue = playerTwo.compareTo(playerOne);
+        Assert.assertEquals(true, secondCompareValue > 0);
+    }
 }
